@@ -34,10 +34,22 @@
   .topnav a:hover{ text-decoration:underline; }
 
   header{ margin-top: 18px; margin-bottom: 28px; }
+
+  /* Header layout with avatar */
+  .header-flex{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .title-block{ min-width:260px; flex: 1 1 420px; }
   .title{ font-size:1.875rem; font-weight:700; letter-spacing:-.01em; margin:0 0 .2rem; }
   .subtitle{ margin:0; color:var(--muted); font-size:.95rem; font-family: var(--sans); }
+  .avatar{
+    width:112px; height:112px; object-fit:cover; border-radius:6px; flex:0 0 auto;
+  }
+  @media (max-width:700px){
+    .avatar{ width:96px; height:96px; }
+  }
 
-  .meta{ margin-top:.5rem; font-family:var(--sans); font-size:.95rem; color:var(--muted) }
+  .meta{ margin-top:.5rem; font-family: var(--sans); font-size:.95rem; color:var(--muted) }
   .meta a{ color:var(--link); text-decoration:none }
   .meta a:hover{ text-decoration:underline }
   .dot{opacity:.6; margin:0 .25rem}
@@ -81,8 +93,16 @@
 
 <main class="wrap">
   <header>
-    <h1 class="title">Riju Marwah</h1>
-    <p class="subtitle">Trustworthy &amp; Reliable LLMs • Token-level Dynamics • Interpretability, Alignment</p>
+    <div class="header-flex">
+      <div class="title-block">
+        <h1 class="title">Riju Marwah</h1>
+        <p class="subtitle">Trustworthy &amp; Reliable LLMs • Token-level Dynamics • Interpretability, Alignment</p>
+      </div>
+      <img
+        class="avatar"
+        src="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/ddbb7af8-a173-411c-962c-60bb3c3f2620/1739349600049/w=256,quality=90,fit=scale-down"
+        alt="Riju Marwah headshot">
+    </div>
 
     <div class="meta">
       New Delhi <span class="dot">·</span> <span id="ist-time">—:—</span><br>
@@ -96,12 +116,15 @@
 
   <section aria-labelledby="about">
     <p>
-      I’m a Research Intern at the AI Institute of South Carolina, advised by Dr. Amit Sheth & Vishal Pallagani. Previously, I interned at EY where I worked on Agentic frameworks and implementation.
-
-      My research interests lie in creating trustworthy and reliable large language models by combining behavioral analysis with intervention design. I focus on token-level dynamics - both technical signals and linguistic cues - situating my work at the intersection of robustness, interpretability, and alignment through both technical and social lenses.
-
-      Outside of AI, I enjoy football, urban-planning, history, and have a keen interest in airplanes and airports. I also like learning new languages! Right now I'm spending time improving my Spanish & German.
-
+      I’m a Research Intern at the AI Institute of South Carolina, advised by Dr. Amit Sheth &amp; Vishal Pallagani. Previously, I interned at EY where I worked on Agentic frameworks and implementation.
+    </p>
+    <p>
+      My research interests lie in creating trustworthy and reliable large language models by combining behavioral analysis with intervention design. I focus on token-level dynamics — both technical signals and linguistic cues — situating my work at the intersection of robustness, interpretability, and alignment through both technical and social lenses.
+    </p>
+    <p>
+      Outside of AI, I enjoy football, urban-planning, history, and have a keen interest in airplanes and airports. I also like learning new languages! Right now I'm spending time improving my Spanish &amp; German.
+    </p>
+    <p>
       If you want to chat, please reach out! I'm always open to discussing collaborations, discuss research or anything else.
     </p>
   </section>
