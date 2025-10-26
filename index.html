@@ -6,72 +6,86 @@
   <meta name="description" content="Riju's Portfolio" />
   <title>Riju Marwah</title>
   <style>
+    /* Typography + rhythm: slightly smaller, air trimmed */
+    html { font-size: 15px; } /* base body text ≈ 15px */
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #222;
+      line-height: 1.55;
     }
+
     .container {
       display: flex;
       flex-direction: column;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 760px;
+      margin: 32px auto;
+      padding: 0 18px;
     }
-    header {
-      margin-bottom: 40px;
-    }
+
+    header { margin-bottom: 28px; }
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.6rem;   /* ~24px */
+      margin: 0 0 0.2rem 0;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
-    nav {
-      margin-top: 10px;
+    h2 {
+      font-size: 1.25rem;  /* ~19px */
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      letter-spacing: -0.005em;
     }
+
+    p { margin: 0.5rem 0; }
+    section { margin-bottom: 28px; }
+
+    nav { margin-top: 8px; }
     nav a {
-      margin-right: 20px;
+      margin-right: 14px;
       text-decoration: none;
       font-weight: 600;
       color: #007acc;
+      font-size: 0.95rem; /* ~14px */
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover { text-decoration: underline; }
+
+    ul, ol { padding-left: 18px; margin: 0.3rem 0 0.6rem; }
+    ul { list-style-type: disc; }
+    li + li { margin-top: 0.3rem; }
+
+    a { color: #0060df; }
+    a:hover { text-decoration: underline; }
+
+    /* Subtle image and logo scaling to match smaller type */
+    .avatar {
+      width: 112px; height: 112px; object-fit: cover; margin-bottom: 14px; border-radius: 4px;
     }
-    section {
-      margin-bottom: 40px;
+    .logo-inline {
+      height: 0.9em; width: auto; vertical-align: middle;
     }
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    a {
-      color: #0060df;
-    }
-    a:hover {
-      text-decoration: underline;
+
+    /* Two-column list stays readable with smaller text */
+    #edu ul { column-gap: 24px; }
+    @media (max-width: 640px) {
+      html { font-size: 14.5px; } /* nudge smaller on small screens */
+      .container { margin: 24px auto; padding: 0 16px; }
+      .avatar { width: 96px; height: 96px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/ddbb7af8-a173-411c-962c-60bb3c3f2620/1739349600049/w=256,quality=90,fit=scale-down" alt="Profile Photo" style="width: 128px; height: 128px; object-fit: cover; margin-bottom: 20px;">
-      <h1 style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+      <img class="avatar" src="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/ddbb7af8-a173-411c-962c-60bb3c3f2620/1739349600049/w=256,quality=90,fit=scale-down" alt="Profile Photo">
+      <h1 style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
         Riju Marwah
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/GGSIU_logo.svg/1100px-GGSIU_logo.svg.png" 
-             alt="GGSIPU Logo" 
-             style="height: 1em; width: auto; vertical-align: middle;">
-        <img src="https://d15gkqt2d16c1n.cloudfront.net/images/universities/logos/University_of_South_Carolina_Logo" 
-             alt="AI Institute SC Logo" 
-             style="height: 1em; width: auto; vertical-align: middle;">
+        <img class="logo-inline" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/GGSIU_logo.svg/1100px-GGSIU_logo.svg.png" alt="GGSIPU Logo">
+        <img class="logo-inline" src="https://d15gkqt2d16c1n.cloudfront.net/images/universities/logos/University_of_South_Carolina_Logo" alt="AI Institute SC Logo">
       </h1>
 
-      <p>I’m a Research Intern at the AI Institute of South Carolina. My research interests lie in developing trustworthy and reliable large language models by combining behavioral analysis with intervention design. I focus on token-level dynamics - both technical signals and linguistic cues - situating my work at the intersection of robustness, interpretability, and alignment through both technical and social lenses. </p>
-      <p style="margin-top: -10px; font-size: 0.9rem; color: #555;">&mdash; New Delhi · <span id="ist-time"></span></p>
+      <p>I’m a Research Intern at the AI Institute of South Carolina. My research interests lie in developing trustworthy and reliable large language models by combining behavioral analysis with intervention design. I focus on token-level dynamics - both technical signals and linguistic cues - situating my work at the intersection of robustness, interpretability, and alignment through both technical and social lenses.</p>
+      <p style="margin-top: -6px; font-size: 0.9rem; color: #555;">&mdash; New Delhi · <span id="ist-time"></span></p>
       <script>
         function updateTimeIST() {
           const now = new Date();
@@ -83,13 +97,15 @@
         updateTimeIST();
         setInterval(updateTimeIST, 1000);
       </script>
-      <p style="margin-top: 10px;">
+
+      <p style="margin-top: 8px; font-size: 0.95rem;">
         <a href="https://drive.google.com/file/d/1RAyO-07Opdy3dng16pxqy1ThW8Exzilk/view?usp=sharing" style="text-decoration: none; color: #007acc;">Resume</a> ·
         <a href="mailto:marwah.riju@gmail.com" style="text-decoration: none; color: #007acc;">marwah.riju@gmail.com</a> ·
         <a href="https://linkedin.com/in/riju-marwah" style="text-decoration: none; color: #007acc;">LinkedIn</a> ·
         <a href="https://scholar.google.com/citations?user=Oahgb0wAAAAJ&hl=en" style="text-decoration: none; color: #007acc;">Scholar</a> ·
         <a href="https://github.com/rijumarwah" style="text-decoration: none; color: #007acc;">Github</a>
       </p>
+
       <nav>
         <a href="#edu">Education</a>
         <a href="#publications">Publications</a>
@@ -106,140 +122,128 @@
         <li>
           <strong>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</strong><br />
           <em>40th AAAI Demonstration, 2026 (Under Review)</em>
-          <p>
-            This paper introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in large language models by monitoring token-level signals and applying retrain-free interventions, making chatbot interactions more reliable and transparent.
-          </p>
+          <p>This paper introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in large language models by monitoring token-level signals and applying retrain-free interventions, making chatbot interactions more reliable and transparent.</p>
         </li>
         <li>
           <strong>MicroDetect-Net (MDN): Leveraging Deep Learning to Detect Microplastics in Clam Blood, a Step Towards Human Blood Analysis</strong><br />
           <em>Springer Nature, 8th International Conference on Innovative Computing and Communication, Innovative Computation in Biomedical Imaging</em>
-          <p>
-            With this paper, we present a new model, the MicroDetect-Net (MDN), which applies fluorescence microscopy with Nile Red-dye staining and deep learning to scan blood samples for microplastics.
-          </p>
-          <p>
-            [ <a href="https://arxiv.org/pdf/2508.19021" style="text-decoration: none; color: #007acc;">Preprint</a> ]
-          </p>
+          <p>With this paper, we present a new model, the MicroDetect-Net (MDN), which applies fluorescence microscopy with Nile Red-dye staining and deep learning to scan blood samples for microplastics.</p>
+          <p>[ <a href="https://arxiv.org/pdf/2508.19021" style="text-decoration: none; color: #007acc;">Preprint</a> ]</p>
         </li>
       </ol>
     </section>
 
     <section id="experience">
-    <h2>Experience</h2>
-    <ol style="margin-left: 20px; line-height: 1.6;">
-      <li style="margin-bottom: 6px;">
-        Research Intern, <strong>AI Institute at the University of South Carolina</strong>
-        <ul style="margin-top: 10px; margin-bottom: 20px;">
-          <li style="margin-bottom: 6px;">Explored and conceptualized novel frameworks addressing <em>AI fatigue</em> and interventions for prevention</li>
-          <li style="margin-bottom: 6px;">PI: Vishal Pallagani, Dr. Amit Sheth</li>
-        </ul>
-      </li>
-      <li style="margin-bottom: 6px;">
-        AgenticAI Intern, <strong>EY (Ernst & Young)</strong>
-        <ul style="margin-top: 10px; margin-bottom: 20px;">
-          <li style="margin-bottom: 6px;">Built a low-code platform to design and execute AgenticAI workflows using a modular DAG engine with LLMs, vector DBs, and logic components</li>
-          <li style="margin-bottom: 6px;">Engineered scalable task execution with Celery, Redis, and real-time debugging</li>
-          <li style="margin-bottom: 6px;">Integrated semantic agent routing, memory, and API/tool support (OpenAI, FAISS)</li>
-        </ul>
-      </li>
-      <li style="margin-bottom: 6px;">
-        Summer Intern, <strong>National Thermal Power Corporation</strong>
-        <ul style="margin-top: 10px; margin-bottom: 20px;">
-          <li style="margin-bottom: 6px;">Developed scalable ASP.NET Core applications using MVC and Entity Framework</li>
-          <li style="margin-bottom: 6px;">Managed MySQL and MongoDB with LINQ, optimizing CRUD operations and ensuring ACID compliance</li>
-          <li style="margin-bottom: 6px;">Implemented secure authentication with Identity Framework, JWT, Gmail SMTP, and Google reCAPTCHA</li>
-        </ul>
-      </li>
-      <li style="margin-bottom: 6px;">
-        Strategy & Information Systems Intern, <strong>Indian Oil Corporation Limited</strong>
-        <ul style="margin-top: 10px; margin-bottom: 20px;">
-          <li style="margin-bottom: 6px;">Contributed to IOCL’s Digital Tender Management Project with QA methodologies (black-box, UI/UX, and performance testing)</li>
-          <li style="margin-bottom: 6px;">Created test cases, boosting application performance, stability, and user experience</li>
-          <li style="margin-bottom: 6px;">Conducted root cause analysis, streamlining processes and enhancing system reliability</li>
-        </ul>
-      </li>
-    </ol>
+      <h2>Experience</h2>
+      <ol style="margin-left: 18px; line-height: 1.55;">
+        <li style="margin-bottom: 4px;">
+          Research Intern, <strong>AI Institute at the University of South Carolina</strong>
+          <ul style="margin-top: 8px; margin-bottom: 16px;">
+            <li>Explored and conceptualized novel frameworks addressing <em>AI fatigue</em> and interventions for prevention</li>
+            <li>PI: Vishal Pallagani, Dr. Amit Sheth</li>
+          </ul>
+        </li>
+        <li style="margin-bottom: 4px;">
+          AgenticAI Intern, <strong>EY (Ernst & Young)</strong>
+          <ul style="margin-top: 8px; margin-bottom: 16px;">
+            <li>Built a low-code platform to design and execute AgenticAI workflows using a modular DAG engine with LLMs, vector DBs, and logic components</li>
+            <li>Engineered scalable task execution with Celery, Redis, and real-time debugging</li>
+            <li>Integrated semantic agent routing, memory, and API/tool support (OpenAI, FAISS)</li>
+          </ul>
+        </li>
+        <li style="margin-bottom: 4px;">
+          Summer Intern, <strong>National Thermal Power Corporation</strong>
+          <ul style="margin-top: 8px; margin-bottom: 16px;">
+            <li>Developed scalable ASP.NET Core applications using MVC and Entity Framework</li>
+            <li>Managed MySQL and MongoDB with LINQ, optimizing CRUD operations and ensuring ACID compliance</li>
+            <li>Implemented secure authentication with Identity Framework, JWT, Gmail SMTP, and Google reCAPTCHA</li>
+          </ul>
+        </li>
+        <li style="margin-bottom: 4px;">
+          Strategy & Information Systems Intern, <strong>Indian Oil Corporation Limited</strong>
+          <ul style="margin-top: 8px; margin-bottom: 16px;">
+            <li>Contributed to IOCL’s Digital Tender Management Project with QA methodologies (black-box, UI/UX, and performance testing)</li>
+            <li>Created test cases, boosting application performance, stability, and user experience</li>
+            <li>Conducted root cause analysis, streamlining processes and enhancing system reliability</li>
+          </ul>
+        </li>
+      </ol>
     </section>
 
-    <section id="projects" style="margin-bottom: 40px;">
-    <h2>Projects</h2>
-    <ol style="margin-left: 20px; line-height: 1.6;">
-      <li>
-        <strong>Dynamically Optimized Cycling Navigation with Real-Time Adaptive Routing</strong>
-        <p>
-          This study develops a real-time cycling route optimization model addressing poor infrastructure, disconnected routes, and traffic. Using Monte Carlo rollouts, OpenStreetMap (OSM), OSMnx, and NetworkX, the model dynamically adjusts road weights based on safety, traffic, and real-time obstacles (1% random blockage). It integrates Dijkstra’s/A for fallback routing and Strongly Connected Components (SCC) to ensure connectivity. The model continuously optimizes safer, cycle-friendly routes, validated through Python-based visualization.
-        </p>
-      </li>
-      <li>
-        <strong>Early Stage Lung Cancer Detection Using Deep Convolutional Neural Networks: A Comprehensive AI-Driven Approach for Precision Pulmonary Nodule Classification and Enhanced CT Imaging</strong>
-        <p>
-          Developed a CNN model using the LIDC-IDRI dataset to detect lung nodules in CT scans, improving early diagnosis of lung cancer. Leveraged Google Cloud for scalable data storage and Google Colab for GPU-accelerated model training. Integrated explainability tools to assist radiologists in making informed diagnoses. Focused on creating a scalable, real-time AI solution for clinical deployment.
-        </p>
-      </li>
-      <li>
-        <strong>Microphone Array-Based Direction of Arrival for Gunshot Detection</strong> <em>(Nominee for Smart India Hackathon 2024)</em>
-        <p>
-          Developed a real-time gunshot detection system using a 6-microphone array to capture sound and determine the direction of arrival (DoA) using Time Difference of Arrival (TDoA) algorithms. Leveraged FPGA-based processing, bandpass filtering, and sound classification algorithms (KNN, STFT) for noise reduction and accurate detection. The system provides visual feedback and enhances situational awareness for military and security applications, reducing false positives and enabling rapid response.
-        </p>
-      </li>
-    </ol>
-  </section>
+    <section id="projects" style="margin-bottom: 28px;">
+      <h2>Projects</h2>
+      <ol style="margin-left: 18px; line-height: 1.55;">
+        <li>
+          <strong>Dynamically Optimized Cycling Navigation with Real-Time Adaptive Routing</strong>
+          <p>This study develops a real-time cycling route optimization model addressing poor infrastructure, disconnected routes, and traffic. Using Monte Carlo rollouts, OpenStreetMap (OSM), OSMnx, and NetworkX, the model dynamically adjusts road weights based on safety, traffic, and real-time obstacles (1% random blockage). It integrates Dijkstra’s/A for fallback routing and Strongly Connected Components (SCC) to ensure connectivity. The model continuously optimizes safer, cycle-friendly routes, validated through Python-based visualization.</p>
+        </li>
+        <li>
+          <strong>Early Stage Lung Cancer Detection Using Deep Convolutional Neural Networks: A Comprehensive AI-Driven Approach for Precision Pulmonary Nodule Classification and Enhanced CT Imaging</strong>
+          <p>Developed a CNN model using the LIDC-IDRI dataset to detect lung nodules in CT scans, improving early diagnosis of lung cancer. Leveraged Google Cloud for scalable data storage and Google Colab for GPU-accelerated model training. Integrated explainability tools to assist radiologists in making informed diagnoses. Focused on creating a scalable, real-time AI solution for clinical deployment.</p>
+        </li>
+        <li>
+          <strong>Microphone Array-Based Direction of Arrival for Gunshot Detection</strong> <em>(Nominee for Smart India Hackathon 2024)</em>
+          <p>Developed a real-time gunshot detection system using a 6-microphone array to capture sound and determine the direction of arrival (DoA) using Time Difference of Arrival (TDoA) algorithms. Leveraged FPGA-based processing, bandpass filtering, and sound classification algorithms (KNN, STFT) for noise reduction and accurate detection. The system provides visual feedback and enhances situational awareness for military and security applications, reducing false positives and enabling rapid response.</p>
+        </li>
+      </ol>
+    </section>
 
-  <section id="news" style="margin-bottom: 40px;">
-  <h2>News Articles</h2>
-  <ol style="margin-left: 20px; line-height: 1.6;">
-    <li><a href="https://www.linkedin.com/in/riju-marwah/details/featured/1612172717977/single-media-viewer/?profileId=ACoAADGwSkQBJNquIuqx5bzolz_lZRiLgI-dFsg" style="text-decoration: none; color: #007acc;">Times of India, Quarantech</a></li>
-    <li><a href="https://www.hindustantimes.com/delhi/tagore-international-showcases-skills-at-computer-fest/story-ROYw6SYRw3dVGM9G09nEtK.html" style="text-decoration: none; color: #007acc;">Hindustan Times, Ordin@Trix 19.0</a></li>
-    <li><a href="https://dwarkaparichay.com/blog/sri-vis-sector-18-dwarka-new-delhi-quarantech-learning-exploring/" style="text-decoration: none; color: #007acc;">Dwarka Parichay, Quarantech</a></li>
-    <li><a href="https://www.linkedin.com/in/riju-marwah/details/featured/1612172696910/single-media-viewer/?profileId=ACoAADGwSkQBJNquIuqx5bzolz_lZRiLgI-dFsg" style="text-decoration: none; color: #007acc;">Brainfeed Magazine, Quarantech</a></li>
-  </ol>
-</section>
+    <section id="news" style="margin-bottom: 28px;">
+      <h2>News Articles</h2>
+      <ol style="margin-left: 18px; line-height: 1.55;">
+        <li><a href="https://www.linkedin.com/in/riju-marwah/details/featured/1612172717977/single-media-viewer/?profileId=ACoAADGwSkQBJNquIuqx5bzolz_lZRiLgI-dFsg" style="text-decoration: none; color: #007acc;">Times of India, Quarantech</a></li>
+        <li><a href="https://www.hindustantimes.com/delhi/tagore-international-showcases-skills-at-computer-fest/story-ROYw6SYRw3dVGM9G09nEtK.html" style="text-decoration: none; color: #007acc;">Hindustan Times, Ordin@Trix 19.0</a></li>
+        <li><a href="https://dwarkaparichay.com/blog/sri-vis-sector-18-dwarka-new-delhi-quarantech-learning-exploring/" style="text-decoration: none; color: #007acc;">Dwarka Parichay, Quarantech</a></li>
+        <li><a href="https://www.linkedin.com/in/riju-marwah/details/featured/1612172696910/single-media-viewer/?profileId=ACoAADGwSkQBJNquIuqx5bzolz_lZRiLgI-dFsg" style="text-decoration: none; color: #007acc;">Brainfeed Magazine, Quarantech</a></li>
+      </ol>
+    </section>
 
-<section id="News Articles" style="margin-bottom: 40px;">
-  <h2>Leadership & Volunteering</h2>
-  <ol style="margin-left: 20px; line-height: 1.6;">
-    <li>Delegate, Harvard Project for Asian and International Relations</li>
-    <li>Volunteer, Rotaract Club of New Delhi</li>
-    <li>Founding Member & Event Head, Quarantech</li>
-  </ol>
-</section>
+    <section id="News Articles" style="margin-bottom: 28px;">
+      <h2>Leadership & Volunteering</h2>
+      <ol style="margin-left: 18px; line-height: 1.55;">
+        <li>Delegate, Harvard Project for Asian and International Relations</li>
+        <li>Volunteer, Rotaract Club of New Delhi</li>
+        <li>Founding Member & Event Head, Quarantech</li>
+      </ol>
+    </section>
 
-<section id="skills" style="margin-bottom: 40px;">
-  <h2>Skill Set</h2>
-  <ul style="margin-left: 20px; line-height: 1.6;">
-    <li><strong>Languages:</strong> Python, C++</li>
-    <li><strong>API Development:</strong> FastAPI, Flask, RESTful APIs, JWT Authentication</li>
-    <li><strong>Orchestration & Queues:</strong> Apache Airflow, Celery, DAG Execution, Task Scheduling, RabbitMQ</li>
-    <li><strong>Microservices:</strong> REST, gRPC, WebSockets, Service-to-Service Communication</li>
-    <li><strong>Databases:</strong> MySQL, PostgreSQL (Schema, Optimization, Indexing), MongoDB, Redis (Caching)</li>
-    <li><strong>Vector Search & Embeddings:</strong> FAISS, OpenAI Embeddings</li>
-    <li><strong>Machine Learning:</strong> TensorFlow, PyTorch, Hugging Face, TorchServe, TF Serving</li>
-    <li><strong>Data Processing:</strong> NumPy, Pandas, MATLAB</li>
-    <li><strong>Tools:</strong> LaTeX, Git, VS Code, PyCharm, Photoshop, Premiere Pro</li>
-  </ul>
-</section>
+    <section id="skills" style="margin-bottom: 28px;">
+      <h2>Skill Set</h2>
+      <ul style="margin-left: 18px; line-height: 1.55;">
+        <li><strong>Languages:</strong> Python, C++</li>
+        <li><strong>API Development:</strong> FastAPI, Flask, RESTful APIs, JWT Authentication</li>
+        <li><strong>Orchestration & Queues:</strong> Apache Airflow, Celery, DAG Execution, Task Scheduling, RabbitMQ</li>
+        <li><strong>Microservices:</strong> REST, gRPC, WebSockets, Service-to-Service Communication</li>
+        <li><strong>Databases:</strong> MySQL, PostgreSQL (Schema, Optimization, Indexing), MongoDB, Redis (Caching)</li>
+        <li><strong>Vector Search & Embeddings:</strong> FAISS, OpenAI Embeddings</li>
+        <li><strong>Machine Learning:</strong> TensorFlow, PyTorch, Hugging Face, TorchServe, TF Serving</li>
+        <li><strong>Data Processing:</strong> NumPy, Pandas, MATLAB</li>
+        <li><strong>Tools:</strong> LaTeX, Git, VS Code, PyCharm, Photoshop, Premiere Pro</li>
+      </ul>
+    </section>
 
-    <section id="edu" style="margin-bottom: 40px;">
-    <h2>Education</h2>
-    <p style="margin-bottom: 5px;"><strong>Bachelor of Technology, Computer Science Engineering</strong></p>
-    <p style="margin-top: 0; margin-bottom: 20px;">Guru Gobind Singh Indraprastha University</p>
-    <p><strong style="font-weight: 600;">Relevant Courses</strong></p>
-    <ul style="columns: 2; -webkit-columns: 2; -moz-columns: 2; margin-top: 10px;">
-      <li>C Language</li>
-      <li>Data Structures</li>
-      <li>Digital Logic and Computer Design</li>
-      <li>OOPs in C++</li>
-      <li>Database Management System</li>
-      <li>Probability Statistics and Linear Programming</li>
-      <li>Programming in Java</li>
-      <li>Advanced Java</li>
-      <li>Theory of Computation</li>
-      <li>Compiler Design</li>
-      <li>Software Engineering</li>
-      <li>Design and Analysis of Algorithms (DAA)</li>
-      <li>Computer Networks</li>
-      <li>Operating Systems</li>
-    </ul>
-  </section>
+    <section id="edu" style="margin-bottom: 28px;">
+      <h2>Education</h2>
+      <p style="margin-bottom: 4px;"><strong>Bachelor of Technology, Computer Science Engineering</strong></p>
+      <p style="margin-top: 0; margin-bottom: 16px;">Guru Gobind Singh Indraprastha University</p>
+      <p><strong style="font-weight: 600;">Relevant Courses</strong></p>
+      <ul style="columns: 2; -webkit-columns: 2; -moz-columns: 2; margin-top: 8px;">
+        <li>C Language</li>
+        <li>Data Structures</li>
+        <li>Digital Logic and Computer Design</li>
+        <li>OOPs in C++</li>
+        <li>Database Management System</li>
+        <li>Probability Statistics and Linear Programming</li>
+        <li>Programming in Java</li>
+        <li>Advanced Java</li>
+        <li>Theory of Computation</li>
+        <li>Compiler Design</li>
+        <li>Software Engineering</li>
+        <li>Design and Analysis of Algorithms (DAA)</li>
+        <li>Computer Networks</li>
+        <li>Operating Systems</li>
+      </ul>
+    </section>
   </div>
 </body>
 </html>
