@@ -24,7 +24,6 @@
   }
   .wrap{ max-width: var(--maxw); margin: 32px auto 64px; padding: 0 16px; }
 
-  /* Top nav bar (above name) */
   .topnav-wrap{ border-bottom:1px solid var(--border); background:var(--bg); }
   .topnav{
     max-width: var(--maxw); margin: 0 auto; padding: 10px 16px;
@@ -35,7 +34,6 @@
 
   header{ margin-top: 18px; margin-bottom: 28px; }
 
-  /* Header layout with avatar */
   .header-flex{
     display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
   }
@@ -72,6 +70,15 @@
   .cols{ columns:2; column-gap:32px }
   @media (max-width:700px){ .cols{ columns:1 } }
 
+  .badge{
+    display:inline-block; font-size:.75rem; padding:.1rem .45rem;
+    border-radius:3px; background:#f0f4ff; color:#2a5bd7;
+    border:1px solid #c5d3f7; margin-left:.35rem; vertical-align:middle; white-space:nowrap;
+  }
+  @media (prefers-color-scheme: dark){
+    .badge{ background:#1a2340; color:#7aa8ff; border-color:#2d3f6b; }
+  }
+
   footer{
     margin-top:2.4rem; padding-top:.8rem; border-top:1px solid var(--border);
     font-family: var(--sans); color:var(--muted); font-size:.9rem;
@@ -80,13 +87,13 @@
 </head>
 <body>
 
-<!-- Top navigation bar -->
 <div class="topnav-wrap">
   <nav class="topnav" aria-label="Primary">
     <a href="#news">News</a>
     <a href="#publications">Publications</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#honors">Honors</a>
     <a href="#education">Education</a>
   </nav>
 </div>
@@ -96,48 +103,53 @@
     <div class="header-flex">
       <div class="title-block">
         <h1 class="title">Riju Marwah</h1>
-        <p class="subtitle">Trustworthy &amp; Reliable LLMs • Token-level Dynamics • Interpretability, Alignment</p>
+        <p class="subtitle">Trustworthy &amp; Reliable LLMs · Token-level Dynamics · Interpretability · Alignment</p>
       </div>
       <img class="avatar" src="https://media.licdn.com/dms/image/v2/D5603AQF8dMueR1fjfQ/profile-displayphoto-crop_800_800/B56Zw87OzGIYAo-/0/1770548687307?e=1776902400&v=beta&t=mMNeOwOg7lGgeGBv2lBtkDfyvRF24GHRsEEVKCQiDPw" alt="Riju Marwah headshot">
     </div>
 
     <div class="meta">
-      New Delhi <span class="dot">·</span> <span id="ist-time">-:-</span><br>
-      <a href="mailto:marwah.riju@gmail.com">marwah.riju@gmail.com</a> <span class="dot">·</span>
-      <a href="https://drive.google.com/file/d/1RAyO-07Opdy3dng16pxqy1ThW8Exzilk/view?usp=sharing">Résumé</a> <span class="dot">·</span>
+      New Delhi, India <span class="dot">·</span> <span id="ist-time">-:-</span><br>
+      <a href="/cdn-cgi/l/email-protection#c3aea2b1b4a2abedb1aaa9b683a4aea2aaafeda0acae"><span class="__cf_email__" data-cfemail="abc6cad9dccac385d9c2c1deebccc6cac2c785c8c4c6">[email&#160;protected]</span></a> <span class="dot">·</span>
+      <a href="https://drive.google.com/file/d/1RAyO-07Opdy3dng16pxqy1ThW8Exzilk/view?usp=sharing">CV</a> <span class="dot">·</span>
       <a href="https://linkedin.com/in/riju-marwah">LinkedIn</a> <span class="dot">·</span>
-      <a href="https://scholar.google.com/citations?user=Oahgb0wAAAAJ&hl=en">Scholar</a> <span class="dot">·</span>
+      <a href="https://scholar.google.com/citations?user=Oahgb0wAAAAJ&hl=en">Google Scholar</a> <span class="dot">·</span>
       <a href="https://github.com/rijumarwah">GitHub</a>
     </div>
   </header>
 
-  <section aria-labelledby="about">
+  <section>
     <p>
-      I’m a Research Intern at the AI Institute of South Carolina, advised by Dr. Amit Sheth &amp; Vishal Pallagani. Previously, I interned at EY where I worked on Agentic frameworks and implementation.
+      I am a Research Intern at the <strong>AI Institute, University of South Carolina</strong>, advised by <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Dr. Amit Sheth</a> and <a href="https://vpallagani.github.io/">Vishal Pallagani</a>.
+      I will complete my Bachelor's in Computer Science from Guru Gobind Singh Indraprastha University in June 2026.
     </p>
     <p>
-      My research interests lie in creating trustworthy and reliable large language models by combining behavioral analysis with intervention design. I focus on token-level dynamics - both technical signals and linguistic cues - situating my work at the intersection of robustness, interpretability, and alignment through both technical and social lenses.
+      My research centers on making large language models <strong>trustworthy, robust, and reliable</strong> through a focus on token-level dynamics. I study how technical signals and linguistic cues interact during long-context generation, and design retrain-free interventions to mitigate degradation. My work sits at the intersection of <strong>robustness, interpretability, and alignment</strong>.
     </p>
     <p>
-      Outside of AI, I enjoy football, urban-planning, history, and have a keen interest in aviation. I also like learning new languages!
+      I am currently working on formalizing cognitive fatigue as a measurable latent state in autoregressive transformers — see the <a href="https://rijumarwah.github.io/llmfatigue/">project page →</a>
     </p>
     <p>
-      If you want to chat, please reach out! I'm always open to discussing collaborations, discuss research or anything else.
+      I am always open to discussing research, collaborations, or anything else — feel free to reach out!
     </p>
   </section>
 
-    <section id="news" aria-labelledby="news-title">
+  <section id="news" aria-labelledby="news-title">
     <h2 id="news-title">News</h2>
     <dl>
+      <dt>Apr 2026</dt>
+      <dd>
+        📄 Paper accepted at <strong>ICML 2026</strong> — <em>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement</em>.
+      </dd>
+      <br>
       <dt>Jan 2026</dt>
       <dd>
-        💻 Presenting Chatsparent at <strong>AAAI 2026</strong>, and volunteering as a Student Scholar Volunteer!
+        💻 Presented Chatsparent at <strong>AAAI 2026</strong> in Singapore; served as a Student Scholar Volunteer.
       </dd>
       <br>
       <dt>Oct 2025</dt>
       <dd>
-        🚀 Our paper “Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs”
-        has been accepted to the <strong>AAAI 2026 Demonstration Track!</strong> See you in Singapore! 🇸🇬
+        🎉 Paper accepted at the <strong>AAAI 2026 Demonstration Track</strong> — <em>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</em> (28% acceptance rate).
       </dd>
     </dl>
   </section>
@@ -146,62 +158,85 @@
     <h2 id="pubs">Publications</h2>
     <ol>
       <li>
-        <strong>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</strong><br>
-        <em>40th AAAI Demonstration, 2026 (Accepted)</em>
+        <strong>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement</strong>
+        <span class="badge">ICML 2026</span><br>
+        <em>Riju Marwah, Ritvik Garimella, Vishal Pallagani, Atishay Jain, Michael Stewart, Amit Sheth</em>
         <p>
-          Introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in LLMs via token-level signals
-          and retrain-free interventions, improving reliability and transparency during dialogue. [<a href="https://openreview.net/pdf?id=bqhxmLYcky">Openreview</a>]
+          Formalizes cognitive fatigue as a runtime state variable grounded in three token-level signals.
+          Introduces the Fatigue Index with five explicit axioms and validates it across nine models (1B–13B)
+          on HotpotQA, TriviaQA, and SQuAD under long-context, positional, and precision stress conditions.
+          [<a href="https://rijumarwah.github.io/llmfatigue/">Project Page</a>]
         </p>
       </li>
       <li>
-        <strong>MicroDetect-Net (MDN): Leveraging Deep Learning to Detect Microplastics in Clam Blood, a Step Towards Human Blood Analysis</strong><br>
-        <em>Springer Nature, 8th International Conference on Innovative Computing and Communication, Innovative Computation in Biomedical Imaging</em>
+        <strong>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</strong>
+        <span class="badge">AAAI 2026 Demo</span><br>
+        <em>40th AAAI Conference on Artificial Intelligence, Demonstration Track, 2026</em>
         <p>
-          Proposes MDN, combining fluorescence microscopy (Nile Red) and deep learning to scan blood samples for microplastics.
+          Introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in LLMs via token-level signals
+          and retrain-free interventions, improving reliability and transparency during dialogue.
+          [<a href="https://openreview.net/pdf?id=bqhxmLYcky">OpenReview</a>]
+        </p>
+      </li>
+      <li>
+        <strong>MicroDetect-Net (MDN): Leveraging Deep Learning to Detect Microplastics in Clam Blood</strong>
+        <span class="badge">Springer / ICICC 2025</span><br>
+        <em>8th International Conference on Innovative Computing and Communication, Springer Nature</em>
+        <p>
+          Proposes MDN, combining fluorescence microscopy (Nile Red staining) and deep learning to scan
+          blood samples for microplastics — a step toward human blood analysis.
           [<a href="https://arxiv.org/pdf/2508.19021">Preprint</a>]
         </p>
       </li>
     </ol>
+
   </section>
 
   <section id="experience" aria-labelledby="exp">
     <h2 id="exp">Experience</h2>
     <ol class="tight">
       <li>
-        Research Collaborator, <strong>University of Illinois Urbana-Champaign</strong>
+        Research Intern, <strong>AI Institute, University of South Carolina</strong>
+        <span style="color:var(--muted); font-size:.9rem;"> · Apr 2025 – Present</span>
         <ul class="tight">
-          <li>Studying politeness framing and reward leakage in LLMs across structured tasks and
-            instruction-following settings.</li>
+          <li>Advisors: <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Dr. Amit Sheth</a> (NCR Chair &amp; Director, AIISC), <a href="https://vpallagani.github.io/">Vishal Pallagani</a></li>
+          <li>Designed a framework to detect and mitigate cognitive fatigue in LLMs using token-level signals and real-time interventions.</li>
+          <li>First-authored an accepted AAAI 2026 Demonstration paper; extended to full paper accepted at ICML 2026.</li>
+          <li>Conducting research on long-context reliability, entropy collapse, and attention decay in LLMs.</li>
+        </ul>
+      </li>
+      <li>
+        Research Collaborator, <strong>University of Illinois Urbana-Champaign</strong>
+        <span style="color:var(--muted); font-size:.9rem;"> · Nov 2025 – Mar 2026</span>
+        <ul class="tight">
+          <li>Advisor: Soorya Ram Shemgekar</li>
+          <li>Studied politeness framing and reward leakage in LLMs across structured tasks and instruction-following settings.</li>
           <li>Performed mechanistic interpretability analysis including early-token probing and activation patching.</li>
         </ul>
       </li>
       <li>
-        Research Intern, <strong>AI Institute at the University of South Carolina</strong>
+        Generative AI Intern, <strong>EY (Ernst &amp; Young)</strong>
+        <span style="color:var(--muted); font-size:.9rem;"> · Jan 2025 – Mar 2025</span>
         <ul class="tight">
-          <li>Conceptualized frameworks for <em>AI fatigue</em> and prevention interventions</li>
-          <li>Mentors: Vishal Pallagani, Dr. Amit Sheth</li>
+          <li>Built a low-code platform for agentic AI workflows using modular DAGs, vector DBs, and LLM toolchains.</li>
+          <li>Implemented Celery–Redis task execution with production-grade scalability.</li>
+          <li>Integrated semantic agent routing, memory components, and external API/tool support (OpenAI, FAISS).</li>
         </ul>
       </li>
       <li>
-        AgenticAI Intern, <strong>EY (Ernst &amp; Young)</strong>
+        Software Developer Intern, <strong>National Thermal Power Corporation</strong>
+        <span style="color:var(--muted); font-size:.9rem;"> · Jul 2024 – Sep 2024</span>
         <ul class="tight">
-          <li>Low-code AgenticAI workflows with modular DAGs (LLMs, vector DBs, logic components)</li>
-          <li>Scaled task execution with Celery/Redis and real-time debugging</li>
-          <li>Integrated agent routing, memory, and API/tooling (OpenAI, FAISS)</li>
-        </ul>
-      </li>
-      <li>
-        Summer Intern, <strong>National Thermal Power Corporation</strong>
-        <ul class="tight">
-          <li>ASP.NET Core apps with MVC/EF; secure auth (Identity, JWT, Gmail SMTP, reCAPTCHA)</li>
-          <li>MySQL/MongoDB with LINQ, CRUD optimization, ACID integrity</li>
+          <li>Developed ASP.NET Core applications using MVC and Entity Framework for enterprise automation.</li>
+          <li>Optimized MySQL and MongoDB CRUD operations via LINQ, ensuring ACID compliance.</li>
+          <li>Implemented secure authentication using JWT, Identity Framework, Google reCAPTCHA, and SMTP.</li>
         </ul>
       </li>
       <li>
         Strategy &amp; IS Intern, <strong>Indian Oil Corporation Limited</strong>
         <ul class="tight">
-          <li>QA for Digital Tender Management (black-box, UI/UX, performance)</li>
-          <li>Root-cause analysis and test design to improve stability and UX</li>
+          <li>QA for Digital Tender Management: black-box testing, UI/UX review, and performance testing.</li>
+          <li>Root-cause analysis and test design to improve system stability and user experience.</li>
         </ul>
       </li>
     </ol>
@@ -211,69 +246,82 @@
     <h2 id="proj">Projects</h2>
     <ol>
       <li>
-        <strong>Dynamically Optimized Cycling Navigation with Real-Time Adaptive Routing</strong>
+        <strong>Early Stage Lung Cancer Detection Using Deep CNNs</strong>
         <p>
-          Real-time cycling route optimization using OSM/OSMnx/NetworkX and Monte Carlo rollouts; dynamic safety/traffic weights
-          with 1% random blockage; Dijkstra/A* fallback; SCC checks for connectivity; Python visual validation.
+          Built a CNN model on the LIDC-IDRI dataset to detect pulmonary nodules in CT scans, enabling earlier diagnosis.
+          Integrated Grad-CAM and SHAP to assist radiologists with model-driven decision support.
         </p>
       </li>
       <li>
-        <strong>Microphone Array-Based DoA for Gunshot Detection</strong> <em>(Smart India Hackathon 2024 Nominee)</em>
+        <strong>Bhoomi: AI-Powered Agricultural Productivity</strong>
         <p>
-          6-mic array, TDoA algorithms, FPGA processing, band-pass filtering, KNN/STFT classification; reduces false positives
-          and improves situational awareness.
+          Full-stack platform integrating drone technology and mobile solutions to enhance agricultural productivity.
+          Developed AI models for crop disease detection and farmer assistance to improve yield and sustainability.
+        </p>
+      </li>
+      <li>
+        <strong>Microphone Array-Based Direction-of-Arrival for Gunshot Detection</strong>
+        <em style="color:var(--muted);"> — Smart India Hackathon 2024 Nominee</em>
+        <p>
+          Six-mic array with TDoA algorithms, FPGA processing, band-pass filtering, and KNN/STFT classification.
+          Reduces false positives and improves situational awareness in public safety applications.
+        </p>
+      </li>
+      <li>
+        <strong>Dynamically Optimized Cycling Navigation with Real-Time Adaptive Routing</strong>
+        <p>
+          Real-time route optimization using OSM/OSMnx/NetworkX and Monte Carlo rollouts with dynamic safety and traffic weights,
+          Dijkstra/A* fallback, and SCC connectivity checks.
         </p>
       </li>
     </ol>
   </section>
 
-  <section id="skills" aria-labelledby="skills-title">
-    <h2 id="skills-title">Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, C++</li>
-      <li><strong>API:</strong> FastAPI, Flask, REST, JWT</li>
-      <li><strong>Orchestration:</strong> Airflow, Celery, DAGs, RabbitMQ</li>
-      <li><strong>Microservices:</strong> REST, gRPC, WebSockets</li>
-      <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Redis</li>
-      <li><strong>Vector &amp; Embeddings:</strong> FAISS, OpenAI</li>
-      <li><strong>ML:</strong> TensorFlow, PyTorch, HF, TorchServe, TF Serving</li>
-      <li><strong>Data:</strong> NumPy, Pandas, MATLAB</li>
-      <li><strong>Tools:</strong> LaTeX, Git, VS Code, PyCharm, Photoshop, Premiere Pro</li>
+  <section id="honors" aria-labelledby="honors-title">
+    <h2 id="honors-title">Honors &amp; Service</h2>
+    <ul class="tight">
+      <li><strong>AAAI Student Volunteer Scholarship</strong> — USD 1,100 travel grant, AAAI 2026</li>
+      <li><strong>McKinsey Forward Program</strong> — selected for global initiative on problem-solving, business, and leadership</li>
+      <li><strong>Media coverage</strong> — Times of India, Hindustan Times (Ordin@trix), Dwarka Parichay, Brainfeed (Quarantech)</li>
+      <li><strong>Student Scholar Volunteer</strong>, AAAI 2026, Singapore</li>
+      <li><strong>Delegate</strong>, Harvard Project for Asian &amp; International Relations (HPAIR), 2025</li>
+      <li><strong>Volunteer</strong>, Rotaract Club of New Delhi — led community health initiatives in Delhi's urban slums, 2025</li>
     </ul>
   </section>
 
   <section id="education" aria-labelledby="edu">
     <h2 id="edu">Education</h2>
-    <p><strong>B.Tech, Computer Science Engineering</strong><br>Guru Gobind Singh Indraprastha University</p>
-    <p><strong>Relevant Courses</strong></p>
-    <a href="https://drive.google.com/file/d/1o6ZSuRMwUUxrnMTTZ43mKuDc17HGhlr1/view?usp=sharing" 
-   style="text-decoration:none;">
-   🔗 Check out: Prerequisite Mapping Syllabi
-</a>
-    <ul class="cols">
-      <li>C Language</li><li>Data Structures</li><li>Digital Logic &amp; Computer Design</li><li>OOP in C++</li>
-      <li>DBMS</li><li>Probability, Statistics &amp; Linear Programming</li><li>Java</li><li>Advanced Java</li>
-      <li>Theory of Computation</li><li>Compiler Design</li><li>Software Engineering</li>
-      <li>Design &amp; Analysis of Algorithms</li><li>Computer Networks</li><li>Operating Systems</li>
+    <p>
+      <strong>B.Tech, Computer Science Engineering</strong> · Guru Gobind Singh Indraprastha University<br>
+      <span style="color:var(--muted); font-size:.93rem;">Nov 2022 – Jun 2026 (Expected) · GPA: 8.12 / 10.0</span>
+    </p>
+
+    <p>
+      <strong>MIT OpenCourseWare — Graduate &amp; Advanced Coursework (Part-time)</strong><br>
+      <span style="color:var(--muted); font-size:.93rem;">
+        6.825 Techniques in AI / Deep Learning for NLP ·
+        6.864 Advanced NLP ·
+        6.867 Machine Learning (Advanced) ·
+        6.006 Introduction to Algorithms
+      </span>
+    </p>
+
+    <p><strong>Relevant Undergraduate Coursework</strong> · <a href="https://drive.google.com/file/d/1o6ZSuRMwUUxrnMTTZ43mKuDc17HGhlr1/view?usp=sharing">Prerequisite Mapping Syllabi →</a></p>
+    <ul class="cols tight">
+      <li>Artificial Intelligence</li><li>Data Structures &amp; Algorithms</li><li>Design &amp; Analysis of Algorithms</li>
+      <li>Operating Systems</li><li>Computer Networks</li><li>Compiler Design</li>
+      <li>Theory of Computation</li><li>Software Engineering</li><li>DBMS</li>
+      <li>OOP in C++</li><li>Java &amp; Advanced Java</li><li>Digital Logic &amp; Computer Design</li>
+      <li>Probability, Statistics &amp; Linear Programming</li>
     </ul>
   </section>
 
   <footer>© <span id="year"></span> Riju Marwah</footer>
 </main>
 
-<script>
-  // IST clock
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function updateTimeIST() {
     const now = new Date();
     const utc = now.getTime() + now.getTimezoneOffset() * 60000;
     const ist = new Date(utc + 5.5 * 3600000);
     const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    document.getElementById('ist-time').textContent = ist.toLocaleTimeString('en-IN', opts);
-  }
-  updateTimeIST(); setInterval(updateTimeIST, 1000);
-
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
