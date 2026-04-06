@@ -161,7 +161,7 @@
       <li>
         <strong>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement</strong>
         <span class="badge">ICML 2026</span><br>
-        <em>Riju Marwah, Ritvik Garimella, Vishal Pallagani, Atishay Jain, Michael Stewart, Amit Sheth</em>
+        <em>Riju Marwah*, Ritvik Garimella, Vishal Pallagani, Atishay Jain, Michael Stewart, Amit Sheth</em>
         <p>
           Formalizes cognitive fatigue as a runtime state variable grounded in three token-level signals.
           Introduces the Fatigue Index with five explicit axioms and validates it across nine models (1B–13B)
@@ -172,7 +172,7 @@
       <li>
         <strong>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</strong>
         <span class="badge">AAAI 2026 Demo</span><br>
-        <em>40th AAAI Conference on Artificial Intelligence, Demonstration Track, 2026</em>
+        <em>Riju Marwah*, Vishal Pallagani, Ritvik Garimella, Amit Sheth</em>
         <p>
           Introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in LLMs via token-level signals
           and retrain-free interventions, improving reliability and transparency during dialogue.
@@ -326,3 +326,10 @@
     const utc = now.getTime() + now.getTimezoneOffset() * 60000;
     const ist = new Date(utc + 5.5 * 3600000);
     const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    document.getElementById('ist-time').textContent = ist.toLocaleTimeString('en-IN', opts);
+  }
+  updateTimeIST(); setInterval(updateTimeIST, 1000);
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
