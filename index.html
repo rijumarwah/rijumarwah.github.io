@@ -3,332 +3,965 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Riju Marwah - Portfolio">
+<meta name="description" content="Riju Marwah — ML Researcher. Trustworthy LLMs, Token-level Dynamics, Interpretability.">
 <title>Riju Marwah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#ffffff; --fg:#111; --muted:#666; --link:#0366d6; --border:#e6e6e6;
-    --maxw: 720px; --lead: 1.6;
-    --serif: ui-serif, "New York", Georgia, "Times New Roman", Times, serif;
-    --sans: ui-sans-serif, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0b0b0c; --fg:#e9e9ea; --muted:#a0a0a4; --link:#5aa6ff; --border:#232326; }
-  }
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html{ font-size:16px }
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font-family: var(--sans); line-height: var(--lead);
-    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-  }
-  .wrap{ max-width: var(--maxw); margin: 32px auto 64px; padding: 0 16px; }
+:root {
+  --white: #ffffff;
+  --off-white: #fafaf8;
+  --paper: #f5f4f0;
+  --ink: #1a1a18;
+  --ink-2: #3a3a36;
+  --ink-3: #6b6b63;
+  --ink-4: #9b9b91;
+  --accent: #c0392b;       /* deep academic red */
+  --accent-soft: #f9eeec;
+  --rule: #e2e1db;
+  --rule-dark: #cccbc3;
+  --link: #1a3a6b;
+  --link-hover: #c0392b;
+  --badge-bg: #eef2f8;
+  --badge-color: #1a3a6b;
+  --badge-border: #cad4e8;
 
-  .topnav-wrap{ border-bottom:1px solid var(--border); background:var(--bg); }
-  .topnav{
-    max-width: var(--maxw); margin: 0 auto; padding: 10px 16px;
-    font-family: var(--sans); font-size:.95rem; display:flex; flex-wrap:wrap; gap:.75rem;
-  }
-  .topnav a{ color:var(--link); text-decoration:none; }
-  .topnav a:hover{ text-decoration:underline; }
+  --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', -apple-system, 'Helvetica Neue', sans-serif;
 
-  header{ margin-top: 18px; margin-bottom: 28px; }
+  --max: 820px;
+  --pad: clamp(16px, 4vw, 40px);
+}
 
-  .header-flex{
-    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
-  }
-  .title-block{ min-width:260px; flex: 1 1 420px; }
-  .title{ font-size:1.875rem; font-weight:700; letter-spacing:-.01em; margin:0 0 .2rem; }
-  .subtitle{ margin:0; color:var(--muted); font-size:.95rem; font-family: var(--sans); }
-  .avatar{
-    width:112px; height:112px; object-fit:cover; border-radius:6px; flex:0 0 auto;
-  }
-  @media (max-width:700px){
-    .avatar{ width:96px; height:96px; }
-  }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-  .meta{ margin-top:.5rem; font-family: var(--sans); font-size:.95rem; color:var(--muted) }
-  .meta a{ color:var(--link); text-decoration:none }
-  .meta a:hover{ text-decoration:underline }
-  .dot{opacity:.6; margin:0 .25rem}
+/* ─── Layout ────────────────────────────────────────────────── */
+.page-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
 
-  h2{
-    font-size:1.25rem; margin:1.6rem 0 .5rem; padding-bottom:.2rem;
-    border-bottom:1px solid var(--border);
-  }
-  h3{ font-size:1.05rem; margin:1.2rem 0 .4rem }
-  p{ margin:.7rem 0 }
-  a{ color:var(--link) }
-  a:hover{ text-decoration: underline }
-  ol, ul{ padding-left: 1.2rem; margin:.4rem 0 .9rem }
-  li+li{ margin-top:.25rem }
-  blockquote{ margin:1rem 0; padding:0 .9rem; border-left:3px solid var(--border); color:var(--muted) }
-  hr{ border:0; border-top:1px solid var(--border); margin:1.5rem 0 }
+/* ─── University Header Bar ─────────────────────────────────── */
+.uni-bar {
+  background: var(--white);
+  padding: 14px 0;
+}
+.uni-bar .page-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.uni-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+  opacity: 0.92;
+}
+.uni-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-left: 1px solid var(--rule-dark);
+  padding-left: 12px;
+}
 
-  .tight li{ margin-top:.15rem }
+/* ─── Top Nav ───────────────────────────────────────────────── */
+.topnav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.96);
+}
+.topnav .page-wrap {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+.topnav a {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  padding: 13px 14px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.topnav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 
-  .cols{ columns:2; column-gap:32px }
-  @media (max-width:700px){ .cols{ columns:1 } }
+/* ─── Header ────────────────────────────────────────────────── */
+.site-header {
+  padding: 52px 0 44px;
+  border-bottom: 1px solid var(--rule);
+}
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: start;
+}
+.name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.tagline strong {
+  color: var(--ink-2);
+  font-weight: 400;
+}
 
-  .badge{
-    display:inline-block; font-size:.75rem; padding:.1rem .45rem;
-    border-radius:3px; background:#f0f4ff; color:#2a5bd7;
-    border:1px solid #c5d3f7; margin-left:.35rem; vertical-align:middle; white-space:nowrap;
-  }
-  @media (prefers-color-scheme: dark){
-    .badge{ background:#1a2340; color:#7aa8ff; border-color:#2d3f6b; }
-  }
+/* Avatar */
+.avatar-wrap {
+  flex-shrink: 0;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.avatar-placeholder svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.25;
+}
 
-  footer{
-    margin-top:2.4rem; padding-top:.8rem; border-top:1px solid var(--border);
-    font-family: var(--sans); color:var(--muted); font-size:.9rem;
-  }
+/* Contact strip */
+.contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  font-size: 0.84rem;
+  color: var(--ink-3);
+  line-height: 1.9;
+}
+.contact-strip a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.12s;
+}
+.contact-strip a:hover { color: var(--link-hover); }
+.sep {
+  color: var(--rule-dark);
+  margin: 0 8px;
+  font-weight: 300;
+}
+
+/* ─── Main Content ──────────────────────────────────────────── */
+.content {
+  padding-bottom: 64px;
+}
+
+/* ─── Sections ──────────────────────────────────────────────── */
+section {
+  padding: 40px 0 0;
+}
+
+h2.section-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ─── Bio ───────────────────────────────────────────────────── */
+.bio p {
+  font-family: var(--font-serif);
+  font-size: 1.13rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+.bio p:last-child { margin-bottom: 0; }
+.bio strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.bio a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--badge-border);
+  transition: border-color 0.12s, color 0.12s;
+}
+.bio a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+
+/* ─── News ──────────────────────────────────────────────────── */
+.news-list {
+  list-style: none;
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+  opacity: 0;
+  animation: fadeUp 0.4s ease forwards;
+}
+.news-item:nth-child(1) { animation-delay: 0.05s; }
+.news-item:nth-child(2) { animation-delay: 0.1s; }
+.news-item:nth-child(3) { animation-delay: 0.15s; }
+.news-date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+.news-text {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.news-text strong { color: var(--ink); font-weight: 500; }
+.news-text em { font-style: italic; color: var(--ink-3); }
+
+/* ─── Publications ──────────────────────────────────────────── */
+.pub-list {
+  list-style: none;
+}
+.pub-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 20px;
+  align-items: start;
+}
+.pub-num {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--ink-4);
+  padding-top: 1px;
+  min-width: 18px;
+  font-weight: 400;
+}
+.pub-body {}
+.pub-title {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.pub-authors {
+  font-size: 0.84rem;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.pub-authors em { font-style: normal; }
+.pub-desc {
+  font-size: 0.86rem;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pub-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--link);
+  text-decoration: none;
+  border: 1px solid var(--badge-border);
+  padding: 2px 9px;
+  border-radius: 3px;
+  background: var(--badge-bg);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.pub-link:hover {
+  background: var(--accent-soft);
+  border-color: #e8b4ae;
+  color: var(--accent);
+}
+.badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.badge.demo {
+  background: var(--badge-bg);
+  color: var(--badge-color);
+  border: 1px solid var(--badge-border);
+}
+
+/* ─── Experience ────────────────────────────────────────────── */
+.exp-list {
+  list-style: none;
+}
+.exp-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.exp-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  margin-bottom: 6px;
+}
+.exp-role {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.exp-org {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  font-weight: 400;
+}
+.exp-date {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+  font-weight: 300;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+}
+.exp-bullets li {
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  padding: 2px 0 2px 14px;
+  position: relative;
+  line-height: 1.55;
+}
+.exp-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--ink-4);
+  font-size: 1rem;
+}
+.exp-bullets a {
+  color: var(--link);
+  text-decoration: none;
+}
+.exp-bullets a:hover { color: var(--link-hover); }
+
+/* ─── Project Cards ─────────────────────────────────────────── */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+@media (max-width: 620px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+.proj-card {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 20px 22px;
+  text-decoration: none;
+  display: block;
+  background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  position: relative;
+}
+.proj-card:hover {
+  border-color: var(--rule-dark);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.proj-card-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.proj-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.proj-card-desc {
+  font-size: 0.84rem;
+  color: var(--ink-3);
+  line-height: 1.55;
+}
+.proj-card-arrow {
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  color: var(--rule-dark);
+  font-size: 1rem;
+  transition: color 0.15s, right 0.15s;
+}
+.proj-card:hover .proj-card-arrow {
+  color: var(--ink-3);
+  right: 14px;
+}
+
+/* ─── Honors ────────────────────────────────────────────────── */
+.honors-list {
+  list-style: none;
+}
+.honors-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  line-height: 1.5;
+}
+.honors-list li::before {
+  content: '◆';
+  color: var(--accent);
+  font-size: 0.45rem;
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
+}
+.honors-list strong { color: var(--ink); font-weight: 500; }
+
+/* ─── Education ─────────────────────────────────────────────── */
+.edu-list {
+  list-style: none;
+}
+.edu-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 20px;
+  align-items: start;
+}
+.edu-degree {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  grid-column: 1;
+}
+.edu-inst {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  grid-column: 1;
+}
+.edu-meta {
+  font-size: 0.8rem;
+  color: var(--ink-4);
+  grid-column: 1;
+}
+.edu-date {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+  white-space: nowrap;
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 3px;
+}
+.edu-incoming {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2a6b3a;
+  background: #edf5ef;
+  border: 1px solid #b8d8be;
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--ink-3);
+}
+.footer-time {
+  font-size: 0.78rem;
+  color: var(--ink-4);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+.fade-in:nth-child(1) { animation-delay: 0.0s; }
+.fade-in:nth-child(2) { animation-delay: 0.06s; }
+.fade-in:nth-child(3) { animation-delay: 0.12s; }
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .header-grid { grid-template-columns: 1fr; }
+  .avatar-wrap { display: none; }
+  .exp-date { margin-left: 0; width: 100%; }
+  .edu-item { grid-template-columns: 1fr; }
+  .edu-date { grid-column: 1; grid-row: auto; }
+  .topnav a { padding: 11px 9px; font-size: 0.7rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* ─── Print ─────────────────────────────────────────────────── */
+@media print {
+  .topnav, .uni-bar { display: none; }
+  .site-header { padding-top: 20px; }
+}
 </style>
 </head>
 <body>
 
-<div class="topnav-wrap">
-  <nav class="topnav" aria-label="Primary">
+<!-- University Bar -->
+<div class="uni-bar">
+  <div class="page-wrap">
+    <img
+      class="uni-logo"
+      src="https://www.iapb.org/wp-content/uploads/2020/09/The-Eberhard-Karls-University-of-Tubingen.png"
+      alt="University of Tübingen"
+    >
+  </div>
+</div>
+
+<!-- Sticky Nav -->
+<nav class="topnav" aria-label="Site navigation">
+  <div class="page-wrap">
     <a href="#news">News</a>
     <a href="#publications">Publications</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#honors">Honors</a>
     <a href="#education">Education</a>
-  </nav>
-</div>
+  </div>
+</nav>
 
-<main class="wrap">
-  <header>
-    <div class="header-flex">
-      <div class="title-block">
-        <h1 class="title">Riju Marwah</h1>
-        <p class="subtitle">Trustworthy &amp; Reliable LLMs · Token-level Dynamics · Interpretability · Alignment</p>
+<main>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="page-wrap">
+      <div class="header-grid">
+        <div>
+          <h1 class="name">Riju Marwah</h1>
+          <p class="tagline">
+            <strong>Trustworthy &amp; Reliable LLMs</strong> &nbsp;·&nbsp;
+            Token-level Dynamics &nbsp;·&nbsp;
+            Interpretability &nbsp;·&nbsp; Alignment
+          </p>
+          <div class="contact-strip">
+            <span>Tübingen, Germany</span>
+            <span class="sep">/</span>
+            <span id="de-time-header" style="font-variant-numeric: tabular-nums;"></span>
+            <span class="sep">/</span>
+            <a href="mailto:marwah.riju@gmail.com">marwah.riju@gmail.com</a>
+            <span class="sep">/</span>
+            <a href="Riju_Marwah_CV.pdf">CV ↗</a>
+            <span class="sep">/</span>
+            <a href="https://linkedin.com/in/riju-marwah" target="_blank">LinkedIn</a>
+            <span class="sep">/</span>
+            <a href="https://scholar.google.com/citations?user=Oahgb0wAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <span class="sep">/</span>
+            <a href="https://github.com/rijumarwah" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="avatar-wrap">
+          <img class="avatar" src="linkedin_profile_image.png" alt="Riju Marwah">
+        </div>
       </div>
-      <img class="avatar" src="linkedin_profile_image.png" alt="Riju Marwah headshot">
-    </div>
-
-    <div class="meta">
-      New Delhi <span class="dot">·</span> <span id="ist-time">-:-</span><br>
-      <a href="mailto:marwah.riju@gmail.com">marwah.riju@gmail.com</a> <span class="dot">·</span>
-      <a href="Riju_Marwah_CV.pdf">CV</a> <span class="dot">·</span>
-      <a href="https://linkedin.com/in/riju-marwah">LinkedIn</a> <span class="dot">·</span>
-      <a href="https://scholar.google.com/citations?user=Oahgb0wAAAAJ&hl=en">Google Scholar</a> <span class="dot">·</span>
-      <a href="https://github.com/rijumarwah">GitHub</a>
     </div>
   </header>
 
-  <section>
-    <p>
-      I am a Research Intern at the <strong>IRT Group at the University of South Carolina</strong>, advised by <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Dr. Amit Sheth</a> and <a href="https://vpallagani.github.io/">Vishal Pallagani</a>.
-      I will complete my Bachelor's in Computer Science in June 2026.
-    </p>
-    <p>
-      My research centers on making large language models <strong>trustworthy, robust, and reliable</strong> through a focus on token-level dynamics. I study how technical signals and linguistic cues interact during long-context generation, and design retrain-free interventions to mitigate degradation. My work sits at the intersection of <strong>robustness, interpretability, and alignment</strong>.
-    </p>
-    <p>
-      I am currently working on formalizing cognitive fatigue as a measurable latent state in autoregressive transformers — see the <a href="https://rijumarwah.github.io/llmfatigue/">project page →</a>
-    </p>
-    <p>
-      I am always open to discussing research, collaborations, or anything else — feel free to reach out!
-    </p>
-  </section>
+  <div class="content">
+    <div class="page-wrap">
 
-  <section id="news" aria-labelledby="news-title">
-    <h2 id="news-title">News</h2>
-    <dl>
-      <dt>Apr 2026</dt>
-      <dd>
-        🎉 Paper accepted at <strong>ICML 2026</strong> — <em>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement</em>.
-      </dd>
-      <br>
-      <dt>Jan 2026</dt>
-      <dd>
-        💻 Presented Chatsparent at <strong>AAAI 2026</strong> in Singapore; served as a Student Scholar Volunteer.
-      </dd>
-      <br>
-      <dt>Oct 2025</dt>
-      <dd>
-        🎉 Paper accepted at the <strong>AAAI 2026 Demonstration Track</strong> — <em>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</em> (28% acceptance rate).
-      </dd>
-    </dl>
-  </section>
-
-  <section id="publications" aria-labelledby="pubs">
-    <h2 id="pubs">Publications</h2>
-    <ol>
-      <li>
-        <strong>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement</strong>
-        <span class="badge">ICML 2026</span><br>
-        <em>Riju Marwah*, Ritvik Garimella, Vishal Pallagani, Atishay Jain, Michael Stewart, Amit Sheth</em>
+      <!-- Bio -->
+      <section class="bio" id="about">
         <p>
-          Formalizes cognitive fatigue as a runtime state variable grounded in three token-level signals.
-          Introduces the Fatigue Index with five explicit axioms and validates it across nine models (1B–13B)
-          on HotpotQA, TriviaQA, and SQuAD under long-context, positional, and precision stress conditions.
-          [<a href="https://rijumarwah.github.io/llmfatigue/">Project Page</a>]
+          I am a Research Intern at the <strong>AI Institute, University of South Carolina</strong>,
+          advised by <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Prof. Amit Sheth</a>
+          and <a href="https://vpallagani.github.io/">Vishal Pallagani</a>.
+          I will be joining the <strong>M.Sc. Machine Learning programme at the University of Tübingen</strong> in fall 2026.
         </p>
-      </li>
-      <li>
-        <strong>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</strong>
-        <span class="badge">AAAI 2026 Demo</span><br>
-        <em>Riju Marwah*, Vishal Pallagani, Ritvik Garimella, Amit Sheth</em>
         <p>
-          Introduces Chatsparent, an interactive system that detects and mitigates cognitive fatigue in LLMs via token-level signals
-          and retrain-free interventions, improving reliability and transparency during dialogue.
-          [<a href="https://openreview.net/pdf?id=bqhxmLYcky">OpenReview</a>]
+          My research focuses on making large language models <strong>trustworthy, robust, and reliable</strong>
+          through token-level dynamics. I study how technical signals and linguistic cues interact during
+          long-context generation and design retrain-free interventions to mitigate degradation —
+          sitting at the intersection of <strong>robustness, interpretability, and alignment</strong>.
         </p>
-      </li>
-      <li>
-        <strong>MicroDetect-Net (MDN): Leveraging Deep Learning to Detect Microplastics in Clam Blood</strong>
-        <span class="badge">Springer / ICICC 2025</span><br>
-        <em>8th International Conference on Innovative Computing and Communication, Springer Nature</em>
         <p>
-          Proposes MDN, combining fluorescence microscopy (Nile Red staining) and deep learning to scan
-          blood samples for microplastics — a step toward human blood analysis.
-          [<a href="https://arxiv.org/pdf/2508.19021">Preprint</a>]
+          I am always open to discussing research or collaborations — feel free to reach out.
         </p>
-      </li>
-    </ol>
+      </section>
 
-  </section>
-
-  <section id="experience" aria-labelledby="exp">
-    <h2 id="exp">Experience</h2>
-    <ol class="tight">
-      <li>
-        Research Intern, <strong>AI Institute, University of South Carolina</strong>
-        <span style="color:var(--muted); font-size:.9rem;"> · Apr 2025 – Present</span>
-        <ul class="tight">
-          <li>Advisors: <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Dr. Amit Sheth</a> (NCR Chair &amp; Director, AIISC), <a href="https://vpallagani.github.io/">Vishal Pallagani</a></li>
-          <li>Designed a framework to detect and mitigate cognitive fatigue in LLMs using token-level signals and real-time interventions.</li>
-          <li>First-authored an accepted AAAI 2026 Demonstration paper; extended to full paper accepted at ICML 2026.</li>
-          <li>Conducting research on long-context reliability, entropy collapse, and attention decay in LLMs.</li>
+      <!-- News -->
+      <section id="news">
+        <h2 class="section-title">News</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <span class="news-date">Apr 2026</span>
+            <span class="news-text">
+              Paper accepted at <strong>ICML 2026</strong> —
+              <em>Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement.</em>
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">Jan 2026</span>
+            <span class="news-text">
+              Presented Chatsparent at <strong>AAAI 2026</strong> in Singapore;
+              served as a Student Scholar Volunteer.
+            </span>
+          </li>
+          <li class="news-item">
+            <span class="news-date">Oct 2025</span>
+            <span class="news-text">
+              Paper accepted at the <strong>AAAI 2026 Demonstration Track</strong> —
+              <em>Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs</em>
+              (28% acceptance rate).
+            </span>
+          </li>
         </ul>
-      </li>
-      <li>
-        Research Collaborator, <strong>University of Illinois Urbana-Champaign</strong>
-        <span style="color:var(--muted); font-size:.9rem;"> · Nov 2025 – Mar 2026</span>
-        <ul class="tight">
-          <li>Advisor: Soorya Ram Shemgekar</li>
-          <li>Studied politeness framing and reward leakage in LLMs across structured tasks and instruction-following settings.</li>
-          <li>Performed mechanistic interpretability analysis including early-token probing and activation patching.</li>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications">
+        <h2 class="section-title">Publications</h2>
+        <ol class="pub-list">
+          <li class="pub-item">
+            <span class="pub-num">1.</span>
+            <div class="pub-body">
+              <div class="pub-title">
+                Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement
+                <span class="badge">ICML 2026</span>
+              </div>
+              <div class="pub-authors">
+                Riju Marwah*, Ritvik Garimella, Vishal Pallagani, Atishay Jain, Michael Stewart, Amit Sheth
+              </div>
+              <div class="pub-desc">
+                Formalizes cognitive fatigue as a runtime state variable grounded in three token-level signals.
+                Introduces the Fatigue Index with five explicit axioms; validated across nine models (1B–13B)
+                on HotpotQA, TriviaQA, and SQuAD under long-context, positional, and precision stress conditions.
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://rijumarwah.github.io/llmfatigue/" target="_blank">Project Page ↗</a>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <span class="pub-num">2.</span>
+            <div class="pub-body">
+              <div class="pub-title">
+                Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs
+                <span class="badge">AAAI 2026 Demo</span>
+              </div>
+              <div class="pub-authors">
+                Riju Marwah*, Vishal Pallagani, Ritvik Garimella, Amit Sheth
+              </div>
+              <div class="pub-desc">
+                An interactive system that detects and mitigates cognitive fatigue in LLMs via token-level signals
+                and retrain-free interventions, improving reliability and transparency during dialogue.
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://openreview.net/pdf?id=bqhxmLYcky" target="_blank">OpenReview ↗</a>
+              </div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <span class="pub-num">3.</span>
+            <div class="pub-body">
+              <div class="pub-title">
+                MicroDetect-Net (MDN): Leveraging Deep Learning to Detect Microplastics in Clam Blood
+                <span class="badge demo">Springer / ICICC 2025</span>
+              </div>
+              <div class="pub-authors">
+                8th International Conference on Innovative Computing and Communication, Springer Nature
+              </div>
+              <div class="pub-desc">
+                Combines fluorescence microscopy (Nile Red staining) and deep learning to scan blood samples
+                for microplastics, a step toward human blood analysis.
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://arxiv.org/pdf/2508.19021" target="_blank">Preprint ↗</a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <ol class="exp-list">
+          <li class="exp-item fade-in">
+            <div class="exp-header">
+              <span class="exp-role">Research Intern</span>
+              <span class="exp-org">AI Institute, University of South Carolina</span>
+              <span class="exp-date">Apr 2025 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Advised by <a href="https://sc.edu/study/colleges_schools/engineering_and_computing/faculty-staff/amitsheth.php">Prof. Amit Sheth</a> (NCR Chair &amp; Director, AIISC) and <a href="https://vpallagani.github.io/">Vishal Pallagani</a>.</li>
+              <li>Designed a framework to detect and mitigate cognitive fatigue in LLMs using token-level signals and real-time interventions.</li>
+              <li>First-authored publications at AAAI 2026 (Demo) and ICML 2026; researching long-context reliability, entropy collapse, and attention decay.</li>
+            </ul>
+          </li>
+          <li class="exp-item fade-in">
+            <div class="exp-header">
+              <span class="exp-role">Research Collaborator</span>
+              <span class="exp-org">University of Illinois Urbana-Champaign</span>
+              <span class="exp-date">Nov 2025 – Mar 2026</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Studied politeness framing and reward leakage in LLMs across structured tasks and instruction-following settings.</li>
+              <li>Performed mechanistic interpretability analysis including early-token probing and activation patching.</li>
+            </ul>
+          </li>
+          <li class="exp-item fade-in">
+            <div class="exp-header">
+              <span class="exp-role">Generative AI Intern</span>
+              <span class="exp-org">EY (Ernst &amp; Young)</span>
+              <span class="exp-date">Jan 2025 – Mar 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Built a low-code platform for agentic AI workflows using modular DAGs, vector DBs, and LLM toolchains (OpenAI, FAISS).</li>
+              <li>Implemented Celery–Redis task execution with production-grade scalability and semantic agent routing.</li>
+            </ul>
+          </li>
+          <li class="exp-item fade-in">
+            <div class="exp-header">
+              <span class="exp-role">Software Developer Intern</span>
+              <span class="exp-org">National Thermal Power Corporation</span>
+              <span class="exp-date">Jul 2024 – Sep 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Developed ASP.NET Core applications using MVC and Entity Framework for enterprise automation.</li>
+              <li>Implemented secure authentication using JWT, Identity Framework, and Google reCAPTCHA.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <a class="proj-card" href="https://rijumarwah.github.io/llmfatigue/" target="_blank">
+            <span class="proj-card-arrow">↗</span>
+            <div class="proj-card-tag">Research · LLM Interpretability</div>
+            <div class="proj-card-title">Cognitive Fatigue in LLMs</div>
+            <div class="proj-card-desc">
+              Formalizing cognitive fatigue as a measurable latent state in autoregressive transformers.
+              Fatigue Index, token-level signals, retrain-free mitigations.
+            </div>
+          </a>
+          <a class="proj-card" href="https://rijumarwah.github.io/masters-in-germany/" target="_blank">
+            <span class="proj-card-arrow">↗</span>
+            <div class="proj-card-tag">Community · Guide</div>
+            <div class="proj-card-title">Masters in Germany: A Complete Guide</div>
+            <div class="proj-card-desc">
+              A detailed guide for students navigating German MSc admissions, covering universities,
+              applications, funding, and life in Germany.
+            </div>
+          </a>
+          <!-- <a class="proj-card" href="#" style="pointer-events:none; opacity:0.6;">
+            <span class="proj-card-arrow" style="opacity:0">↗</span>
+            <div class="proj-card-tag">Deep Learning · Medical Imaging</div>
+            <div class="proj-card-title">Early-Stage Lung Cancer Detection</div>
+            <div class="proj-card-desc">
+              CNN on LIDC-IDRI for pulmonary nodule detection in CT scans, with Grad-CAM and SHAP
+              for radiologist decision support.
+            </div>
+          </a>
+          <a class="proj-card" href="#" style="pointer-events:none; opacity:0.6;">
+            <span class="proj-card-arrow" style="opacity:0">↗</span>
+            <div class="proj-card-tag">Signal Processing · Embedded</div>
+            <div class="proj-card-title">Gunshot Localisation Array</div>
+            <div class="proj-card-desc">
+              Six-mic TDoA array with FPGA processing, KNN/STFT classification for direction-of-arrival
+              gunshot detection. Smart India Hackathon 2024 Nominee.
+            </div>
+          </a> -->
+        </div>
+      </section>
+
+      <!-- Honors -->
+      <section id="honors">
+        <h2 class="section-title">Honors &amp; Service</h2>
+        <ul class="honors-list">
+          <li><strong>AAAI Student Volunteer Scholarship</strong> &ndash; USD 1,100 travel grant, AAAI 2026</li>
+          <li><strong>Student Scholar Volunteer</strong> &ndash; AAAI 2026, Singapore</li>
+          <li><strong>McKinsey Forward Program</strong> &ndash; selected for global initiative on problem-solving, business, and leadership</li>
+          <li><strong>Delegate</strong> &ndash; Harvard Project for Asian &amp; International Relations (HPAIR), 2025</li>
+          <li><strong>Media Coverage</strong> &ndash; Times of India, Hindustan Times, Dwarka Parichay, Brainfeed</li>
         </ul>
-      </li>
-      <li>
-        Generative AI Intern, <strong>EY (Ernst &amp; Young)</strong>
-        <span style="color:var(--muted); font-size:.9rem;"> · Jan 2025 – Mar 2025</span>
-        <ul class="tight">
-          <li>Built a low-code platform for agentic AI workflows using modular DAGs, vector DBs, and LLM toolchains.</li>
-          <li>Implemented Celery–Redis task execution with production-grade scalability.</li>
-          <li>Integrated semantic agent routing, memory components, and external API/tool support (OpenAI, FAISS).</li>
+      </section>
+
+      <!-- Education -->
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <div class="edu-degree">
+              M.Sc. Machine Learning
+              <span class="edu-incoming">Incoming</span>
+            </div>
+            <div class="edu-inst">University of Tübingen</div>
+            <div class="edu-meta">One of Europe's most prestigious ML programmes, affiliated with the Max Planck Institute for Intelligent Systems &amp; the Tübingen AI Center</div>
+            <div class="edu-date">Sep 2026 –</div>
+          </li>
+          <li class="edu-item">
+            <div class="edu-degree">B.Tech. Computer Science Engineering</div>
+            <div class="edu-inst">Guru Gobind Singh Indraprastha University</div>
+            <div class="edu-meta">GPA: 8.44 / 10.0</div>
+            <div class="edu-date">Nov 2022 – Jun 2026</div>
+          </li>
         </ul>
-      </li>
-      <li>
-        Software Developer Intern, <strong>National Thermal Power Corporation</strong>
-        <span style="color:var(--muted); font-size:.9rem;"> · Jul 2024 – Sep 2024</span>
-        <ul class="tight">
-          <li>Developed ASP.NET Core applications using MVC and Entity Framework for enterprise automation.</li>
-          <li>Optimized MySQL and MongoDB CRUD operations via LINQ, ensuring ACID compliance.</li>
-          <li>Implemented secure authentication using JWT, Identity Framework, Google reCAPTCHA, and SMTP.</li>
-        </ul>
-      </li>
-      <li>
-        Strategy &amp; IS Intern, <strong>Indian Oil Corporation Limited</strong>
-        <ul class="tight">
-          <li>QA for Digital Tender Management: black-box testing, UI/UX review, and performance testing.</li>
-          <li>Root-cause analysis and test design to improve system stability and user experience.</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
+      </section>
 
-  <section id="projects" aria-labelledby="proj">
-    <h2 id="proj">Projects</h2>
-    <ol>
-      <li>
-        <strong>Early Stage Lung Cancer Detection Using Deep CNNs</strong>
-        <p>
-          Built a CNN model on the LIDC-IDRI dataset to detect pulmonary nodules in CT scans, enabling earlier diagnosis.
-          Integrated Grad-CAM and SHAP to assist radiologists with model-driven decision support.
-        </p>
-      </li>
-      <li>
-        <strong>Bhoomi: AI-Powered Agricultural Productivity</strong>
-        <p>
-          Full-stack platform integrating drone technology and mobile solutions to enhance agricultural productivity.
-          Developed AI models for crop disease detection and farmer assistance to improve yield and sustainability.
-        </p>
-      </li>
-      <li>
-        <strong>Microphone Array-Based Direction-of-Arrival for Gunshot Detection</strong>
-        <em style="color:var(--muted);"> — Smart India Hackathon 2024 Nominee</em>
-        <p>
-          Six-mic array with TDoA algorithms, FPGA processing, band-pass filtering, and KNN/STFT classification.
-          Reduces false positives and improves situational awareness in public safety applications.
-        </p>
-      </li>
-      <li>
-        <strong>Dynamically Optimized Cycling Navigation with Real-Time Adaptive Routing</strong>
-        <p>
-          Real-time route optimization using OSM/OSMnx/NetworkX and Monte Carlo rollouts with dynamic safety and traffic weights,
-          Dijkstra/A* fallback, and SCC connectivity checks.
-        </p>
-      </li>
-    </ol>
-  </section>
+      <!-- Footer -->
+      <footer>
+        <span class="footer-name">Riju Marwah</span>
+        <span class="footer-time" id="de-time-footer"></span>
+      </footer>
 
-  <section id="honors" aria-labelledby="honors-title">
-    <h2 id="honors-title">Honors &amp; Service</h2>
-    <ul class="tight">
-      <li><strong>AAAI Student Volunteer Scholarship</strong> — USD 1,100 travel grant, AAAI 2026</li>
-      <li><strong>McKinsey Forward Program</strong> — selected for global initiative on problem-solving, business, and leadership</li>
-      <li><strong>Media coverage</strong> — Times of India, Hindustan Times (Ordin@trix), Dwarka Parichay, Brainfeed (Quarantech)</li>
-      <li><strong>Student Scholar Volunteer</strong>, AAAI 2026, Singapore</li>
-      <li><strong>Delegate</strong>, Harvard Project for Asian &amp; International Relations (HPAIR), 2025</li>
-      <li><strong>Volunteer</strong>, Rotaract Club of New Delhi — led community health initiatives in Delhi's urban slums, 2025</li>
-    </ul>
-  </section>
-
-  <section id="education" aria-labelledby="edu">
-    <h2 id="edu">Education</h2>
-    <p>
-      <strong>B.Tech, Computer Science Engineering</strong> · Guru Gobind Singh Indraprastha University<br>
-      <span style="color:var(--muted); font-size:.93rem;">Nov 2022 – Jun 2026 (Expected) · GPA: 8.12 / 10.0</span>
-    </p>
-
-    <p>
-      <strong>MIT OpenCourseWare — Graduate &amp; Advanced Coursework (Part-time)</strong><br>
-      <span style="color:var(--muted); font-size:.93rem;">
-        6.825 Techniques in AI / Deep Learning for NLP ·
-        6.864 Advanced NLP ·
-        6.867 Machine Learning (Advanced) ·
-        6.006 Introduction to Algorithms
-      </span>
-    </p>
-
-    <p><strong>Relevant Undergraduate Coursework</strong> · <a href="https://drive.google.com/file/d/1o6ZSuRMwUUxrnMTTZ43mKuDc17HGhlr1/view?usp=sharing">Prerequisite Mapping Syllabi →</a></p>
-    <ul class="cols tight">
-      <li>Artificial Intelligence</li><li>Data Structures &amp; Algorithms</li><li>Design &amp; Analysis of Algorithms</li>
-      <li>Operating Systems</li><li>Computer Networks</li><li>Compiler Design</li>
-      <li>Theory of Computation</li><li>Software Engineering</li><li>DBMS</li>
-      <li>OOP in C++</li><li>Java &amp; Advanced Java</li><li>Digital Logic &amp; Computer Design</li>
-      <li>Probability, Statistics &amp; Linear Programming</li>
-    </ul>
-  </section>
-
-  <footer>© <span id="year"></span> Riju Marwah</footer>
+    </div><!-- /page-wrap -->
+  </div><!-- /content -->
 </main>
 
 <script>
-  function updateTimeIST() {
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function getGermanyTime() {
     const now = new Date();
-    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-    const ist = new Date(utc + 5.5 * 3600000);
-    const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    document.getElementById('ist-time').textContent = ist.toLocaleTimeString('en-IN', opts);
+    const formatter = new Intl.DateTimeFormat('en-DE', {
+      timeZone: 'Europe/Berlin',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false
+    });
+    const parts = formatter.formatToParts(now);
+    const get = t => parts.find(p => p.type === t).value;
+    // Get timezone abbreviation (CET/CEST)
+    const tzFormatter = new Intl.DateTimeFormat('en-DE', {
+      timeZone: 'Europe/Berlin', timeZoneName: 'short'
+    });
+    const tzParts = tzFormatter.formatToParts(now);
+    const tz = tzParts.find(p => p.type === 'timeZoneName')?.value || 'CET';
+    return `${get('hour')}:${get('minute')}:${get('second')} ${tz}`;
   }
-  updateTimeIST(); setInterval(updateTimeIST, 1000);
-  document.getElementById('year').textContent = new Date().getFullYear();
+  function updateTime() {
+    const str = getGermanyTime();
+    const header = document.getElementById('de-time-header');
+    const footer = document.getElementById('de-time-footer');
+    if (header) header.textContent = str;
+    if (footer) footer.textContent = 'Tübingen · ' + str;
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
 </script>
 </body>
 </html>
